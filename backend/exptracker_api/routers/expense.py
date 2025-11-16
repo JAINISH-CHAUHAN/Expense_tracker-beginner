@@ -8,7 +8,7 @@ expense_table = {}
 
 
 
-@router.post('/expense', response_model=Expense)
+@router.post('/expense', response_model=Expense, status_code=201)
 async def create_expense(expense : ExpenseIn):
     last_record_id = len(expense_table)
     data = expense.model_dump()
